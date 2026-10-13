@@ -34,3 +34,8 @@ scenarios:
   - name: all_healthy
     description: "Baseline — both providers healthy"
     provider_overrides: {}
+  - name: degraded_multi_provider
+    description: "Degraded condition — primary fails 80%, backup fails 20% to test fallback resilience"
+    provider_overrides:
+      primary: 0.8
+      backup: 0.2
